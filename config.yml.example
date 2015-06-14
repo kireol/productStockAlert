@@ -1,0 +1,6 @@
+---
+products:
+  - siteUrl: https://www.yoursite.com/somejsonurl
+    siteBaseUrl: http://www.yoursite.com/
+    email: you@someemail.com
+    productName: "Super cool thing you want"
