@@ -1,9 +1,9 @@
 <?php
 
-function getConfigFilePath($HIPSHROOT)
+function getConfigFilePath($APPROOT)
 {
     GLOBAL $argv;
-    $projectRoot = $HIPSHROOT . "config.yml";
+    $projectRoot = $APPROOT . "config.yml";
     $userSpecified = $argv[1];
 
     if (file_exists($projectRoot)) {
