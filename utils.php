@@ -24,6 +24,6 @@ function getConfigFilePath($HIPSHROOT)
 
 function getConfig()
 {
-    GLOBAL $HIPSHROOT;
-    return Spyc::YAMLLoad(getConfigFilePath($HIPSHROOT));
+    GLOBAL $APPROOT;
+    return Spyc::YAMLLoad(getConfigFilePath($APPROOT));
 }

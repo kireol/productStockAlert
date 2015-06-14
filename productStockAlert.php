@@ -2,8 +2,8 @@
 
 require 'vendor/autoload.php';
 date_default_timezone_set('America/Detroit');
-$HIPSHROOT = dirname(__FILE__) . "/";
-require_once $HIPSHROOT . "utils.php";
+$APPROOT = dirname(__FILE__) . "/";
+require_once $APPROOT . "utils.php";
 $CONFIG = getConfig();
 $productsToCheck = $CONFIG['products'];
 
