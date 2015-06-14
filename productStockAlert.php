@@ -16,7 +16,7 @@ foreach ($productsToCheck as $productToCheck) {
     $inStockProducts = array();
 
     foreach ($json->data->products as $product) {
-        if (strcmp($product->product_status, "expired") == 0) {
+        if (strcmp($product->product_status, "expired") != 0) {
             $inStockProducts[] = $product;
         }
     }
