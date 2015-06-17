@@ -7,6 +7,8 @@ require_once $APPROOT . "utils.php";
 $CONFIG = getConfig();
 $productsToCheck = $CONFIG['products'];
 
+$lastRunFile = "~/lastproductstockcheck.txt";
+
 foreach ($productsToCheck as $productToCheck) {
     $currentTimeStamp = array_sum(explode(' ', microtime())) * 10000;
     $url = $productToCheck['siteUrl'] . $currentTimeStamp;
@@ -28,6 +30,10 @@ foreach ($productsToCheck as $productToCheck) {
             $output .= $productToCheck['siteBaseUrl'] . $product->url . ".html\n";
             $output .= "\n";
         }
-        mail($productToCheck['email'], $productToCheck['productName'] . " in stock", $output);
+        $lastFile = file_get_contents($lastRunFile);
+        if (strcmp($lastFile, $output) != 0) {
+            mail($productToCheck['email'], $productToCheck['productName'] . " in stock", $output);
+            file_put_contents($lastRunFile, $output);
+        }
     }
 }
