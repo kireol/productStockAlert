@@ -7,7 +7,7 @@ require_once $APPROOT . "utils.php";
 $CONFIG = getConfig();
 $productsToCheck = $CONFIG['products'];
 
-$lastRunFile = "~/lastproductstockcheck.txt";
+$lastRunFile = "/home/jenkins/lastproductstockcheck.txt";
 
 foreach ($productsToCheck as $productToCheck) {
     $currentTimeStamp = array_sum(explode(' ', microtime())) * 10000;
